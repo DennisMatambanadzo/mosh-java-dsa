@@ -13,6 +13,10 @@ public class LinkedList {
             this.value = value;
         }
 
+        public Node() {
+
+        }
+
     }
 
     private Node first;
@@ -106,7 +110,7 @@ public class LinkedList {
 
         var current = first;
         int index = 0;
-        while (current != null) {
+        while (current.next != null) {
 
             array[index++] = current.value;
             current = current.next;
@@ -115,13 +119,35 @@ public class LinkedList {
         return array;
     }
 
-    public void reverse(){
+    public void reverse() {
+        if (isEmpty()) return;
         var current = first;
-        int index = 0;
+        Node prev = new Node();
         while (current != null) {
+            var nextNode = current.next;
+            current.next = prev;
+            prev = current;
+            current = nextNode;
 
         }
+        var hF = first;
+        first = last;
+        last = hF;
 
+    }
+
+    public void print() {
+
+        var current = first;
+
+        while (current != null) {
+
+            if (current.next != null) {
+                System.out.println(current.value + " -- " + count--);
+            }
+            current = current.next;
+
+        }
     }
 
     public int size() {
@@ -134,5 +160,20 @@ public class LinkedList {
     // contains
     // indexOf
 
+    public void getKthNodeFromTheEnd(int K) {
+        var current = first;
+        var hold = 0;
+
+        var node = new Node();
+//        while (current != null) {
+//            if (hold == K - 1) {
+//                node = current;
+//            }
+//            current = current.next;
+//            hold++;
+//        }
+
+
+    }
 
 }
