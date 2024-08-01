@@ -1,10 +1,10 @@
-import java.util.Stack;
-
 public class Main {
     public static void main(String[] args) {
-        StringReverser reverser = new StringReverser();
+       Expression expression = new Expression();
 
-        reverser.reverse(null);
+        boolean checker = expression.expressionChecker("(1 + 2))");
+        System.out.println(checker);
+
 
     }
 }
