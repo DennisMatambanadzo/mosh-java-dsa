@@ -1,10 +1,21 @@
 public class Main {
     public static void main(String[] args) {
-       Expression expression = new Expression();
 
-        boolean checker = expression.expressionChecker("(1 + 2))");
-        System.out.println(checker);
+        Stack stack = new Stack();
 
+        stack.push(10);
+        stack.push(20);
+        stack.push(30);
+//        int peek = stack.peek();
+//
+//        System.out.println(peek);
 
+        stack.pop();
+        stack.pop();
+        stack.pop();
+        stack.push(40);
+
+        System.out.println(stack.isEmpty());
+        System.out.println(stack);
     }
 }

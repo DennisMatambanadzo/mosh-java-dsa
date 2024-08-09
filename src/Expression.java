@@ -9,25 +9,14 @@ public class Expression {
             if (expression.charAt(i) == '(' || expression.charAt(i) == '<' || expression.charAt(i) == '[') {
                 characterStack.push(expression.charAt(i));
             }
-            if (expression.charAt(i) == ')') {
-                if (isEmpty(characterStack))
+            if (expression.charAt(i) == ')' || expression.charAt(i) == '>' || expression.charAt(i) == ']') {
+                if (characterStack.isEmpty())
                     return false;
                 characterStack.pop();
             }
-            if (expression.charAt(i) == '>') {
-                characterStack.pop();
-            }
-            if (expression.charAt(i) == ']') {
-                characterStack.pop();
-            }
-
         }
         return characterStack.empty();
     }
-
-    private boolean isEmpty(Stack<Character> stack) {
-
-        return stack.isEmpty();
-    }
 }
+
 
