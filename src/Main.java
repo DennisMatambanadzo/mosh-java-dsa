@@ -19,10 +19,10 @@ public class Main {
 
         Stack<Integer> stack = new Stack<>();
         System.out.println("original queue : " + queue);
-        for (int i = queue.size(); i > 0; i--) {
+        while(!queue.isEmpty()){
             stack.add(queue.remove());
         }
-        for (int i = stack.size(); i > 0; i--) {
+        while(!stack.isEmpty()){
             queue.add(stack.pop());
         }
 
