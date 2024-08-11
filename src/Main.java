@@ -1,21 +1,30 @@
+import java.util.ArrayDeque;
+import java.util.Arrays;
+import java.util.Queue;
+import java.util.Stack;
+
 public class Main {
     public static void main(String[] args) {
+        Queue<Integer> queue = new ArrayDeque<>();
 
-        Stack stack = new Stack();
+        queue.add(10);
+        queue.add(20);
+        queue.add(30);
 
-        stack.push(10);
-        stack.push(20);
-        stack.push(30);
-//        int peek = stack.peek();
-//
-//        System.out.println(peek);
+        reverse(queue);
+        System.out.println(queue);
+    }
 
-        stack.pop();
-        stack.pop();
-        stack.pop();
-        stack.push(40);
+    public static void reverse(Queue<Integer> queue) {
 
-        System.out.println(stack.isEmpty());
-        System.out.println(stack);
+        Stack<Integer> stack = new Stack<>();
+        System.out.println("original queue : " + queue);
+        for (int i = queue.size(); i > 0; i--) {
+            stack.add(queue.remove());
+        }
+        for (int i = stack.size(); i > 0; i--) {
+            queue.add(stack.pop());
+        }
+
     }
 }
