@@ -13,8 +13,8 @@ public class ArrayDeque {
     public void enqueue(int item) {
         if (count == queueArray.length)
             throw new IllegalStateException();
-        queueArray[count++] = item;
-        rear = count - 1;
+        queueArray[rear++] = item;
+        count++;
     }
 
     public int peek() {
@@ -27,8 +27,8 @@ public class ArrayDeque {
         if (count == 0)
             throw new IllegalStateException();
         var item = queueArray[front];
-        front++;
-        --count;
+        queueArray[front++] = 0;
+        count--;
         return item;
     }
 
@@ -42,8 +42,8 @@ public class ArrayDeque {
 
     @Override
     public String toString() {
-        System.out.println("rear: " + rear);
-        System.out.println("count: " + count);
-        return Arrays.toString(Arrays.copyOfRange(queueArray,0,front));
+
+        int[] content = Arrays.copyOfRange(queueArray, front, rear);
+        return Arrays.toString(content);
     }
 }
