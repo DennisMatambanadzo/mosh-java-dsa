@@ -8,27 +8,29 @@ public class StackQueue {
 
 
     public void enqueue(int item) {
-        if (mainStack.isEmpty())
-            mainStack.push(item);
-        else {
-            while (!mainStack.isEmpty()){
-                secondStack.push(mainStack.pop());
-            }
-            mainStack.push(item);
-            for (int i = 0; i < secondStack.size(); i++) {
-                mainStack.push(secondStack.pop());
-                front++;
-                count++;
-            }
+        while (!mainStack.empty()) {
+            secondStack.push(mainStack.pop());
+        }
+        mainStack.push(item);
+        while (!secondStack.empty()) {
+            mainStack.push(secondStack.pop());
         }
     }
 
     public int dequeue() {
+        if (mainStack.isEmpty())
+            throw new IllegalStateException();
         return mainStack.pop();
     }
 
     public int peek() {
-       return mainStack.lastElement();
+        if (mainStack.isEmpty())
+            throw new IllegalStateException();
+        return mainStack.lastElement();
+    }
+
+    public boolean isEmpty() {
+        return mainStack.isEmpty();
     }
 
 
