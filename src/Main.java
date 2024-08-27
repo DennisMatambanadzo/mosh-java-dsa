@@ -2,22 +2,22 @@
 
 public class Main {
     public static void main(String[] args) {
-        StackQueue stackQueue = new StackQueue();
+        PriorityQueue pq = new PriorityQueue();
 
 
-       /* stackQueue.enqueue(10);
-        stackQueue.enqueue(20);
-        stackQueue.enqueue(30);
-        stackQueue.enqueue(40);
-        stackQueue.enqueue(50);
-        stackQueue.enqueue(60);
-        stackQueue.enqueue(70);*/
-//        System.out.println(stackQueue.dequeue());
-//        System.out.println(stackQueue.peek());
-        System.out.println(stackQueue.isEmpty());
-        System.out.println(stackQueue.isEmpty());
-//        System.out.println(stackQueue.dequeue());
-//        System.out.println(stackQueue.peek());
-        System.out.println(stackQueue);
+        pq.enqueue(5);
+        pq.enqueue(3);
+        pq.enqueue(6);
+        pq.enqueue(7);
+        pq.enqueue(4);
+        pq.enqueue(3);
+        pq.enqueue(2);
+
+        System.out.println(pq);
+
+        while (!pq.isEmpty())
+            System.out.println(pq.remove());
+
+
     }
 }
