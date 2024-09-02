@@ -2,12 +2,13 @@
 
 public class Main {
     public static void main(String[] args) {
-        CharFinder charFinder = new CharFinder();
-        var words = "a green apple";
-        var ch = charFinder.findFirstNonRepeatingChar(words);
-        System.out.println(ch);
+        HashTable hashTable = new HashTable();
+        hashTable.put(2, "Dennis");
+        hashTable.put(3, "Larry");
+        hashTable.put(1, "Charles");
+        hashTable.remove(1);
+        hashTable.put(6, "Bobby");
 
-        var ch2 = charFinder.findFirstRepeatingCharacter(words);
-        System.out.println(ch2);
+        System.out.println(hashTable.get(60));
     }
 }
