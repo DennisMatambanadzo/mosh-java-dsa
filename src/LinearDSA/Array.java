@@ -1,3 +1,5 @@
+package LinearDSA;
+
 public class Array {
     public Array(int length) {
         items = new int[length];
